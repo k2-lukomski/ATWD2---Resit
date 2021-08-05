@@ -1,0 +1,23 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="station">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="rec" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:dateTime" name="ts" use="optional"/>
+                <xs:attribute type="xs:float" name="nox" use="optional"/>
+                <xs:attribute type="xs:float" name="no" use="optional"/>
+                <xs:attribute type="xs:float" name="no2" use="optional"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:short" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="geocode"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
